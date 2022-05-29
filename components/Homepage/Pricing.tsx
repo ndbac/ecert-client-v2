@@ -207,7 +207,7 @@ export const Pricing = () => {
                   Start Free Trial
                 </a>
                 <a
-                  className="block sm:inline-block py-4 px-6 text-xs font-semibold leading-none border border border-blue-500 hover:border-blue-400 rounded"
+                  className="block sm:inline-block py-4 px-6 text-xs font-semibold leading-none border border-blue-500 hover:border-blue-400 rounded"
                   href="#"
                 >
                   Purchase

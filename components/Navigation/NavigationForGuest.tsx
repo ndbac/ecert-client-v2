@@ -64,12 +64,14 @@ export const NavigationForGuest = () => {
               </a>
             </li>
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                Features
-              </a>
+              <Link href="/contact">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Contact
+                </a>
+              </Link>
             </li>
           </ul>
           <div className="hidden lg:block">
