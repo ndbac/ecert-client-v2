@@ -17,9 +17,5 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "require-jsdoc": 0,
   },
-  settings: {
-    react: {
-      version: "lastest",
-    },
-  },
+  settings: {},
 };
