@@ -1,13 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { NavigationForGuest } from "../components/Navigation/NavigationForGuest";
-import { Header } from "../components/Homepage/Header";
-import { HowItWork } from "../components/Homepage/HowItWork";
-import { Pricing } from "../components/Homepage/Pricing";
+import { SignUp } from "../components/SignUp/SignUp";
 import { Footer } from "../components/Footer/Footer";
+import { NavigationForGuest } from "../components/Navigation/NavigationForGuest";
 
-const Home: NextPage = () => {
+const SignUpPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -17,12 +15,10 @@ const Home: NextPage = () => {
       </Head>
 
       <NavigationForGuest />
-      <Header />
-      <HowItWork />
-      <Pricing />
+      <SignUp />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default SignUpPage;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import EcertLogo from "../../public/assets/logo/metis.svg";
@@ -17,9 +18,11 @@ export const NavigationForUser = () => {
     <section>
       <div className="container px-4 mx-auto">
         <nav className="flex items-center py-6">
-          <a className="text-3xl font-semibold leading-none" href="#">
-            <Image className="h-10" src={EcertLogo} alt="" />
-          </a>
+          <Link href="/">
+            <a className="text-3xl font-semibold leading-none" href="#">
+              <Image className="h-10" src={EcertLogo} alt="" />
+            </a>
+          </Link>
           <div className="lg:hidden ml-auto">
             <button
               onClick={handleResponsive}
@@ -79,12 +82,14 @@ export const NavigationForUser = () => {
           ></div>
           <nav className="relative flex flex-col py-6 px-6 w-full h-full bg-white border-r overflow-y-auto">
             <div className="flex items-center mb-8">
-              <a
-                className="mr-auto text-3xl font-semibold leading-none"
-                href="#"
-              >
-                <Image className="h-10" src={EcertLogo} alt="" />
-              </a>
+              <Link href="/">
+                <a
+                  className="mr-auto text-3xl font-semibold leading-none"
+                  href="#"
+                >
+                  <Image className="h-10" src={EcertLogo} alt="" />
+                </a>
+              </Link>
               <button onClick={handleResponsive} className="navbar-close">
                 <svg
                   className="h-6 w-6 text-blueGray-400 cursor-pointer hover:text-blueGray-500"

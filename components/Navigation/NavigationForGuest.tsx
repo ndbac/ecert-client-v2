@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import EcertLogo from "../../public/assets/logo/metis.svg";
@@ -17,9 +18,11 @@ export const NavigationForGuest = () => {
     <section>
       <div className="container px-4 mx-auto">
         <nav className="flex items-center py-6">
-          <a className="text-3xl font-semibold leading-none" href="#">
-            <Image className="h-10" src={EcertLogo} alt="" />
-          </a>
+          <Link href="/">
+            <a className="text-3xl font-semibold leading-none" href="#">
+              <Image className="h-10" src={EcertLogo} alt="" />
+            </a>
+          </Link>
           <div className="lg:hidden ml-auto">
             <button
               onClick={handleResponsive}
@@ -70,18 +73,22 @@ export const NavigationForGuest = () => {
             </li>
           </ul>
           <div className="hidden lg:block">
-            <a
-              className="mr-2 inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
-              href="#"
-            >
-              Log In
-            </a>
-            <a
-              className="inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
-              href="#"
-            >
-              Sign Up
-            </a>
+            <Link href="/signin">
+              <a
+                className="mr-2 inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
+                href="#"
+              >
+                Log In
+              </a>
+            </Link>
+            <Link href="/signup">
+              <a
+                className="inline-block px-4 py-3 text-xs font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
+                href="#"
+              >
+                Sign Up
+              </a>
+            </Link>
           </div>
         </nav>
       </div>
@@ -93,12 +100,14 @@ export const NavigationForGuest = () => {
           ></div>
           <nav className="relative flex flex-col py-6 px-6 w-full h-full bg-white border-r overflow-y-auto">
             <div className="flex items-center mb-8">
-              <a
-                className="mr-auto text-3xl font-semibold leading-none"
-                href="#"
-              >
-                <Image className="h-10" src={EcertLogo} alt="" />
-              </a>
+              <Link href="/">
+                <a
+                  className="mr-auto text-3xl font-semibold leading-none"
+                  href="#"
+                >
+                  <Image className="h-10" src={EcertLogo} alt="" />
+                </a>
+              </Link>
               <button onClick={handleResponsive} className="navbar-close">
                 <svg
                   className="h-6 w-6 text-blueGray-400 cursor-pointer hover:text-blueGray-500"
@@ -152,18 +161,23 @@ export const NavigationForGuest = () => {
                 </li>
               </ul>
               <div className="mt-4 pt-6 border-t border-blueGray-100">
-                <a
-                  className="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
-                  href="#"
-                >
-                  Sign Up
-                </a>
-                <a
-                  className="block px-4 py-3 mb-2 text-xs text-center text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
-                  href="#"
-                >
-                  Log In
-                </a>
+                <Link href="/signup">
+                  <a
+                    className="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
+                    href="#"
+                  >
+                    Sign Up
+                  </a>
+                </Link>
+
+                <Link href="/signin">
+                  <a
+                    className="block px-4 py-3 mb-2 text-xs text-center text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
+                    href="#"
+                  >
+                    Log In
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="mt-auto">

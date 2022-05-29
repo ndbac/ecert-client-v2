@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { SignIn } from "../components/SignIn/SignIn";
 
-const Home: NextPage = () => {
+const SignInPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -17,4 +17,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default SignInPage;

@@ -1,40 +1,42 @@
 import Image from "next/image";
-import Link from "next/link";
-
 import WalkDogPhoto from "../../public/assets/illustrations/walk-dog.png";
-import FacebookSign from "../../public/assets/logo/facebook-sign.svg";
-import GoogleSign from "../../public/assets/logo/google-sign.svg";
-import EcertLogo from "../../public/assets/logo/metis.svg";
 
-export const SignIn = () => {
+export const SignUp = () => {
   return (
-    <section className="relative pb-20 mt-12">
+    <section className="relative pb-20 mx-80">
       <div className="hidden lg:block absolute inset-0 w-1/2 ml-auto">
         <div className="flex items-center h-full">
-          <Image className="lg:max-w-lg mx-auto" src={WalkDogPhoto} alt="" />
+          <div className="lg:max-w-xl mx-auto">
+            <Image src={WalkDogPhoto} alt="" />
+          </div>
         </div>
       </div>
       <div className="container px-4 mx-auto">
         <div className="relative flex flex-wrap">
           <div className="lg:flex lg:flex-col w-full lg:w-1/2 py-6 lg:pr-20">
-            <div className="flex justify-between items-center w-full mb-12 lg:mb-20">
-              <Link href="/">
-                <a className="text-3xl font-semibold leading-none" href="#">
-                  <Image className="h-10" src={EcertLogo} alt="" />
-                </a>
-              </Link>
-              <Link href="/signup">
-                <a
-                  className="inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
-                  href="#"
-                >
-                  Sign Up
-                </a>
-              </Link>
-            </div>
             <div className="w-full max-w-lg mx-auto lg:mx-0 my-auto">
-              <span className="text-sm text-blueGray-400">Sign In</span>
-              <h4 className="mb-6 text-3xl">Join our community</h4>
+              <span className="text-sm text-blueGray-400">Sign Up</span>
+              <h4 className="mb-6 text-3xl">Create an account</h4>
+              <div className="flex -mx-3">
+                <div className="flex w-1/2 px-3">
+                  <div className="flex w-full mb-4 px-4 bg-blueGray-50 rounded">
+                    <input
+                      className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
+                      type="text"
+                      placeholder="First name"
+                    />
+                  </div>
+                </div>
+                <div className="flex w-1/2 px-3">
+                  <div className="flex w-full mb-4 px-4 bg-blueGray-50 rounded">
+                    <input
+                      className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
+                      type="text"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="flex mb-4 px-4 bg-blueGray-50 rounded">
                 <input
                   className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
@@ -86,26 +88,15 @@ export const SignIn = () => {
                 </button>
               </div>
               <button className="block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded">
-                Sign In
-              </button>
-              <p className="my-6 text-xs text-blueGray-400 text-center">
-                or continue with
-              </p>
-              <button className="flex items-center w-full px-4 py-3 mb-2 text-xs text-blueGray-500 font-semibold leading-none border hover:bg-blueGray-50 rounded">
-                <Image className="h-6 pr-10" alt="" src={FacebookSign} />
-                <span>Sign In with Facebook</span>
-              </button>
-              <button className="flex items-center px-4 py-3 w-full text-xs text-blueGray-500 font-semibold leading-none border hover:bg-blueGray-50 rounded">
-                <Image className="h-6 pr-10" alt="" src={GoogleSign} />
-                <span>Sign In with Google</span>
+                Sign Up
               </button>
             </div>
             <div>
               <p className="mt-8 text-xs text-blueGray-400 text-center lg:text-left">
                 <a className="underline hover:text-blueGray-500" href="#">
                   Police privacy
-                </a>
-                and
+                </a>{" "}
+                and{" "}
                 <a className="underline hover:text-blueGray-500" href="#">
                   Terms of Use
                 </a>
