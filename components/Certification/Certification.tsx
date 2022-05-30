@@ -37,7 +37,7 @@ export const Certification = () => {
           <h2 className="text-3xl md:text-4xl mt-4 mb-4 font-bold font-heading">
             <span className="text-blue-600"> eCert </span>
             <span>Verifying</span>
-            <p className="text-red-500 text-sm">Invalid certification</p>
+            <p className="text-red-600 text-sm">Invalid certification</p>
           </h2>
         </div>
       ) : (
@@ -50,6 +50,12 @@ export const Certification = () => {
               {uploadCert?.name}
             </h2>
             <p className="text-blueGray-700">{uploadCert?.data}</p>
+            <p className="text-blueGray-700 text-sm font-semibold">
+              Created at: {uploadCert?.createdAt}
+            </p>
+            <p className="text-blueGray-700 text-sm font-semibold">
+              Updated at: {uploadCert?.updatedAt}
+            </p>
             <p className="text-blueGray-400 text-sm">
               Email: {uploadCert?.email}
             </p>

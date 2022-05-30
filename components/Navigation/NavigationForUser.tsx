@@ -8,12 +8,16 @@ import FacebookLogo from "../../public/assets/icons/facebook-blue.svg";
 import TwitterLogo from "../../public/assets/icons/twitter-blue.svg";
 import InstagramLogo from "../../public/assets/icons/instagram-blue.svg";
 
+import { getItemFromLocalStorage } from "../../utils/helpers";
+
 export const NavigationForUser = () => {
   const [mobile, setMobile] = useState(false);
 
   const handleResponsive = () => {
     setMobile(!mobile);
   };
+
+  const userId = getItemFromLocalStorage("id");
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
@@ -55,12 +59,14 @@ export const NavigationForUser = () => {
               </Link>
             </li>
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                Dashboard
-              </a>
+              <Link href={`${userId}/dashboard`}>
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Dashboard
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/contact">
@@ -129,12 +135,14 @@ export const NavigationForUser = () => {
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Dashboard
-                  </a>
+                  <Link href={`${userId}/dashboard`}>
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Dashboard
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-1">
                   \

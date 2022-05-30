@@ -8,10 +8,13 @@ export interface IUploadCertificationRes {
   signature: string;
   userId: string;
   _id: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface CertState {
   uploadCert: IUploadCertificationRes;
+  certs: IUploadCertificationRes[];
   isCreated: boolean;
   loading: boolean;
   serverErr: string;

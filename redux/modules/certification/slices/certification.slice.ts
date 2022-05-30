@@ -64,6 +64,28 @@ export const getCertification = createAsyncThunk(
   }
 );
 
+export const getCertificationsByUserId = createAsyncThunk(
+  "certification/getCerts",
+  async (inputId: string | string[] | undefined, { rejectWithValue }) => {
+    try {
+      console.log(`${baseUrl}/user/accuracy/user/${inputId}`);
+      const { data } = await axios.get<IUploadCertificationRes>(
+        `${baseUrl}/user/accuracy/user/${inputId}`
+      );
+      console.log(data);
+      return data;
+    } catch (error) {
+      const err = error as AxiosError | Error;
+      console.log(error);
+      if (axios.isAxiosError(err)) {
+        return rejectWithValue(err?.response?.data);
+      } else {
+        return rejectWithValue(err);
+      }
+    }
+  }
+);
+
 const certificationSlices = createSlice({
   name: "certification",
   initialState: {} as CertState,
@@ -97,6 +119,20 @@ const certificationSlices = createSlice({
       state.serverErr = undefined;
     });
     builder.addCase(getCertification.rejected, (state, action) => {
+      state.serverErr = action?.error?.message;
+      state.loading = false;
+    });
+    // Get certification by userId
+    builder.addCase(getCertificationsByUserId.pending, (state) => {
+      state.loading = true;
+      state.serverErr = undefined;
+    });
+    builder.addCase(getCertificationsByUserId.fulfilled, (state, action) => {
+      state.certs = action?.payload;
+      state.loading = false;
+      state.serverErr = undefined;
+    });
+    builder.addCase(getCertificationsByUserId.rejected, (state, action) => {
       state.serverErr = action?.error?.message;
       state.loading = false;
     });
