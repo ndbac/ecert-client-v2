@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { Certification } from "../../components/Certification/Certification";
-import { NavigationForGuest } from "../../components/Navigation/NavigationForGuest";
+import { Navigation } from "../../components/Navigation/Navigation";
 import { Footer } from "../../components/Footer/Footer";
 
 const CertificationPage: NextPage = () => {
@@ -14,7 +14,7 @@ const CertificationPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationForGuest />
+      <Navigation />
       <Certification />
       <Footer />
     </div>

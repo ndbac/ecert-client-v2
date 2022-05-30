@@ -1,4 +1,48 @@
+import { useDispatch, useSelector } from "react-redux";
+import * as Yup from "yup";
+import { useRouter } from "next/router";
+import { useFormik } from "formik";
+import {
+  AppDispatch,
+  RootState,
+} from "../../redux/modules/common/common.interface";
+import { uploadCertAction } from "../../redux/modules/certification/slices/certification.slice";
+import { CertState } from "../../redux/modules/certification/interfaces/certification.interface";
+import Dropzone from "react-dropzone";
+
+const formSchema = Yup.object({
+  data: Yup.string().required("Please enter data"),
+  subject: Yup.string().required("Please enter subject"),
+  name: Yup.string().required("Please enter name"),
+  email: Yup.string().required("Please enter email"),
+  file: Yup.string().required("Please provide file"),
+});
+
 export const UploadCerti = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const formik = useFormik({
+    initialValues: {
+      data: "",
+      subject: "",
+      name: "",
+      email: "",
+      file: "",
+    },
+    onSubmit: (values) => {
+      dispatch(uploadCertAction(values));
+    },
+    validationSchema: formSchema,
+  });
+
+  const storeData = useSelector<RootState>(
+    (store) => store.certiReducer
+  ) as CertState;
+  const { isCreated, loading, serverErr } = storeData;
+  const router = useRouter();
+  if (isCreated) {
+    router.push(`/`);
+  }
+
   return (
     <section className="py-20">
       <div className="container px-4 mx-auto">
@@ -10,7 +54,7 @@ export const UploadCerti = () => {
             </h2>
           </div>
           <div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className="mb-4 text-sm">
                 <span className="mr-4 font-semibold">Departament:</span>
                 <label className="mr-4">
@@ -19,9 +63,9 @@ export const UploadCerti = () => {
                     type="radio"
                     name="department"
                     value="1"
-                    checked
+                    defaultChecked
                   />
-                  <span>Support</span>
+                  <span>Standard</span>
                 </label>
                 <label>
                   <input
@@ -30,7 +74,7 @@ export const UploadCerti = () => {
                     name="department"
                     value="2"
                   />
-                  <span>Sales</span>
+                  <span>Blockchain</span>
                 </label>
               </div>
               <div className="mb-4">
@@ -38,6 +82,9 @@ export const UploadCerti = () => {
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
                   placeholder="Subject"
+                  value={formik.values.subject}
+                  onChange={formik.handleChange("subject")}
+                  onBlur={formik.handleBlur("subject")}
                 />
               </div>
               <div className="mb-4">
@@ -45,6 +92,9 @@ export const UploadCerti = () => {
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
                   placeholder="Name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange("name")}
+                  onBlur={formik.handleBlur("name")}
                 />
               </div>
               <div className="mb-4">
@@ -52,24 +102,44 @@ export const UploadCerti = () => {
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="email"
                   placeholder="name@example.com"
+                  value={formik.values.email}
+                  onChange={formik.handleChange("email")}
+                  onBlur={formik.handleBlur("email")}
                 />
               </div>
               <div className="mb-4">
                 <textarea
                   className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
                   placeholder="Message..."
+                  value={formik.values.data}
+                  onChange={formik.handleChange("data")}
+                  onBlur={formik.handleBlur("data")}
                 ></textarea>
               </div>
               <div className="mb-4">
                 <label className="flex px-2 bg-blueGray-50 rounded">
-                  <input
-                    className="hidden"
-                    type="file"
-                    placeholder="Choose file.."
-                    name="Choose file"
-                  />
-                  <div className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
-                    Browse
+                  <div className="py-6">
+                    <Dropzone
+                      onDrop={(acceptedFiles) => {
+                        formik.setFieldValue("file", acceptedFiles[0]);
+                      }}
+                    >
+                      {({ getRootProps, getInputProps }) => (
+                        <div className="container">
+                          <div
+                            {...getRootProps({
+                              className: "dropzone",
+                              onDrop: (event) => event.stopPropagation(),
+                            })}
+                          >
+                            <input {...getInputProps()} />
+                            <p className="text-gray-400 px-2 text-xs font-semibold cursor-pointer hover:text-gray-700">
+                              Upload certification
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </Dropzone>
                   </div>
                 </label>
               </div>
@@ -89,9 +159,14 @@ export const UploadCerti = () => {
                   className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
                   type="submit"
                 >
-                  Submit
+                  {loading ? "Uploading" : "Submit"}
                 </button>
               </div>
+              {serverErr && (
+                <span className="text-sm text-red-400">
+                  Cannot upload certification. Please try again.
+                </span>
+              )}
             </form>
           </div>
         </div>

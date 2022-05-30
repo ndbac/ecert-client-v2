@@ -11,7 +11,7 @@ export const Pricing = () => {
         <div className="text-center mb-16">
           <h2 className="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading">
             <span>Start saving time today and</span>
-            <span className="text-blue-600">choose</span>
+            <span className="text-blue-600"> choose </span>
             <span>your best plan</span>
           </h2>
           <p className="max-w-sm mx-auto text-lg text-blueGray-400">

@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { SignUp } from "../components/SignUp/SignUp";
 import { Footer } from "../components/Footer/Footer";
-import { NavigationForGuest } from "../components/Navigation/NavigationForGuest";
+import { Navigation } from "../components/Navigation/Navigation";
 
 const SignUpPage: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const SignUpPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationForGuest />
+      <Navigation />
       <SignUp />
       <Footer />
     </div>

@@ -44,14 +44,6 @@ export const NavigationForGuest = () => {
                 className="text-sm text-blueGray-400 hover:text-blueGray-500"
                 href="#"
               >
-                Product
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
                 Company
               </a>
             </li>
@@ -129,14 +121,6 @@ export const NavigationForGuest = () => {
             </div>
             <div>
               <ul>
-                <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Product
-                  </a>
-                </li>
                 <li className="mb-1">
                   <a
                     className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"

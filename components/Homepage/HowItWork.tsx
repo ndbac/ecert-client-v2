@@ -12,7 +12,7 @@ export const HowItWork = () => {
           <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold font-heading">
               <span>Make your</span>
-              <span className="text-blue-600">life easier</span>
+              <span className="text-blue-600"> life easier </span>
               <span>for marketing sales and customer support</span>
             </h2>
           </div>

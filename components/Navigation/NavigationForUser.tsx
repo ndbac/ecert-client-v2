@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Router from "next/router";
 
 import EcertLogo from "../../public/assets/logo/metis.svg";
 import FacebookLogo from "../../public/assets/icons/facebook-blue.svg";
@@ -12,6 +13,13 @@ export const NavigationForUser = () => {
 
   const handleResponsive = () => {
     setMobile(!mobile);
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("time");
+    Router.reload();
   };
 
   return (
@@ -40,38 +48,39 @@ export const NavigationForUser = () => {
           </div>
           <ul className="hidden lg:flex ml-12 mr-auto space-x-12">
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                Product
-              </a>
+              <Link href="/upload-certification">
+                <a className="text-sm text-blueGray-400 hover:text-blueGray-500">
+                  Upload
+                </a>
+              </Link>
             </li>
             <li>
               <a
                 className="text-sm text-blueGray-400 hover:text-blueGray-500"
                 href="#"
               >
-                Company
+                Dashboard
               </a>
             </li>
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                Features
-              </a>
+              <Link href="/contact">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Contact
+                </a>
+              </Link>
             </li>
           </ul>
+          <div className="hidden lg:block">
+            <button
+              className="mr-2 inline-block px-4 py-3 text-xs text-blue-600 hover:text-blue-700 font-semibold leading-none border border-blue-200 hover:border-blue-300 rounded"
+              onClick={handleLogOut}
+            >
+              Log Out
+            </button>
+          </div>
         </nav>
       </div>
       <div className={mobile ? "" : "hidden"}>
@@ -110,38 +119,43 @@ export const NavigationForUser = () => {
             <div>
               <ul>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Product
-                  </a>
+                  <Link href="/upload-certification">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Upload
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-1">
                   <a
                     className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
                     href="#"
                   >
-                    Company
+                    Dashboard
                   </a>
                 </li>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Features
-                  </a>
+                  \
+                  <Link href="/contact">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Contact
+                    </a>
+                  </Link>
                 </li>
               </ul>
+              <div className="mt-4 pt-6 border-t border-blueGray-100">
+                <button
+                  className="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 text-white rounded"
+                  onClick={handleLogOut}
+                >
+                  Log out
+                </button>
+              </div>
             </div>
             <div className="mt-auto">
               <p className="my-4 text-xs text-blueGray-400">

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { NavigationForGuest } from "../components/Navigation/NavigationForGuest";
+import { Navigation } from "../components/Navigation/Navigation";
 import { Contact } from "../components/Contact/Contact";
 import { Footer } from "../components/Footer/Footer";
 
@@ -14,7 +14,7 @@ const ContactPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationForGuest />
+      <Navigation />
       <Contact />
       <Footer />
     </div>

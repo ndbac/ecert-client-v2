@@ -1,4 +1,7 @@
 import Image from "next/image";
+import * as Yup from "yup";
+import { useRouter } from "next/router";
+import { useFormik } from "formik";
 
 import WalkDogPhoto from "../../public/assets/illustrations/walk-dog.png";
 import PhoneOnlineShoppingPhoto from "../../public/assets/illustrations/phone-online-shopping.png";
@@ -8,7 +11,22 @@ import MarvelLogo from "../../public/assets/logo/brands/marvel.svg";
 import NikeLogo from "../../public/assets/logo/brands/nike.svg";
 import AirBnbLogo from "../../public/assets/logo/brands/airbnb.svg";
 
+const formSchema = Yup.object({
+  signature: Yup.string().required("Please enter signature"),
+});
+
 export const Header = () => {
+  const router = useRouter();
+  const formik = useFormik({
+    initialValues: {
+      signature: "",
+    },
+    onSubmit: (values) => {
+      router.push(`/certification/${values.signature}`);
+    },
+    validationSchema: formSchema,
+  });
+
   return (
     <div className="">
       <section className="relative overflow-x-hidden overflow-y-hidden">
@@ -26,63 +44,52 @@ export const Header = () => {
           <div className="mt-12 mb-12">
             <div className="max-w-lg mx-auto mb-8 text-center">
               <span className="inline-block px-3 py-2 text-xs font-semibold bg-blue-50 text-blue-500 rounded-full uppercase">
-                New project
+                Certificate Verification
               </span>
               <h2 className="text-3xl md:text-4xl mt-4 mb-4 font-bold font-heading">
-                <span>The quick</span>
-                <span className="text-blue-600"> brown fox </span>
-                <span>jumps over the lazy dog.</span>
+                <span>Verifying with</span>
+                <span className="text-blue-600"> eCert </span>
+                <span>make things easier and safer</span>
               </h2>
               <p className="text-blueGray-400 leading-relaxed">
-                The quick brown fox jumps over the lazy dog.
+                Checking certifications with only one click.
               </p>
             </div>
             <div className="max-w-2xl mx-auto text-center">
-              <div className="flex flex-wrap">
-                <div className="flex flex-1 mb-4 mr-4 px-4 rounded bg-blueGray-50">
-                  <svg
-                    className="h-6 w-6 my-auto mr-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                  </svg>
-                  <input
-                    className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
-                    type="email"
-                    placeholder="Type your e-mail"
-                  />
+              <form onSubmit={formik.handleSubmit}>
+                <div className="flex flex-wrap">
+                  <div className="flex flex-1 mb-4 mr-4 px-4 rounded bg-blueGray-50">
+                    <svg
+                      className="h-6 w-6 my-auto mr-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    <input
+                      className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
+                      type="text"
+                      placeholder="Type certification signature"
+                      value={formik.values.signature}
+                      onChange={formik.handleChange("signature")}
+                      onBlur={formik.handleBlur("signature")}
+                    />
+                  </div>
+                  <div className="w-full lg:w-auto">
+                    <button
+                      type="submit"
+                      className="block w-full py-4 px-6 mb-2 lg:w-auto text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
+                    >
+                      Check
+                    </button>
+                  </div>
                 </div>
-                <div className="flex flex-1 mb-4 lg:mr-4 px-4 rounded bg-blueGray-50">
-                  <svg
-                    className="h-6 w-6 my-auto mr-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <input
-                    className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
-                    type="email"
-                    placeholder="Password"
-                  />
-                </div>
-                <div className="w-full lg:w-auto">
-                  <a
-                    className="block w-full py-4 px-6 mb-2 lg:w-auto text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
-                    href="#"
-                  >
-                    Sign Up
-                  </a>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center max-w-4xl mx-auto pt-8 pb-4">

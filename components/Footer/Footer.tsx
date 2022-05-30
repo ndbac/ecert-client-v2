@@ -23,8 +23,9 @@ export const Footer = () => {
           </div>
           <div className="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
             <p className="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 lg:text-lg text-blueGray-400 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              luctus eget justo.
+              eCert - Electronic Certification. We are confident to be the
+              pioner of the digital certifications with 100% security by
+              applying blockchain technology.
             </p>
           </div>
           <div className="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
@@ -32,19 +33,20 @@ export const Footer = () => {
               Office
             </p>
             <p className="lg:text-lg text-blueGray-400">
-              359 Hidden Valley Road, NY
+              Room 205 - B1, School of ICT, Hanoi University of Science and
+              Technology
             </p>
           </div>
           <div className="w-full lg:w-1/5 px-3">
             <p className="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">
               Contacts
             </p>
-            <p className="lg:text-lg text-blueGray-400">hello@gmail.com</p>
+            <p className="lg:text-lg text-blueGray-400">helper@ecert.com</p>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row items-center lg:justify-between">
           <p className="text-xs text-blueGray-400">
-            © 2020. All rights reserved.
+            © 2022. All rights reserved.
           </p>
           <div className="order-first lg:order-last -mx-2 mb-4 lg:mb-0">
             <a className="inline-block px-2" href="#">

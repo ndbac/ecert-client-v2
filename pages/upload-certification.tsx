@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { UploadCerti } from "../components/UploadCerti/UploadCerti";
-import { NavigationForGuest } from "../components/Navigation/NavigationForGuest";
+import { Navigation } from "../components/Navigation/Navigation";
 import { Footer } from "../components/Footer/Footer";
 
 const UploadCertiPage: NextPage = () => {
@@ -14,7 +14,7 @@ const UploadCertiPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationForGuest />
+      <Navigation />
       <UploadCerti />
       <Footer />
     </div>
