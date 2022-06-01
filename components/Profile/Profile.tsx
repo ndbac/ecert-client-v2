@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
@@ -23,14 +24,12 @@ export const Profile = () => {
           Sorry, but we are unable to open this page.
         </p>
         <div>
-          <Link href="/">
-            <a
-              className="block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
-              href="#"
-            >
-              Go back to Homepage
-            </a>
-          </Link>
+          <a
+            className="block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
+            href="/"
+          >
+            Go back to Homepage
+          </a>
           <Link href="/">
             <button
               className="block sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-800 text-center font-semibold leading-none bg-blueGray-50 hover:bg-blueGray-100 rounded"
