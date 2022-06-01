@@ -43,7 +43,7 @@ export const SignIn = () => {
 
   const router = useRouter();
   if (userAuth) {
-    router.push(`/`);
+    router.push(`/${userAuth.id}/profile`);
   }
 
   return (

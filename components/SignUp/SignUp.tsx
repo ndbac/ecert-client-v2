@@ -62,7 +62,7 @@ export const SignUp = () => {
   }
 
   return (
-    <section className="relative pb-20 mx-80">
+    <section className="relative pb-20 lg:mx-80">
       <div className="hidden lg:block absolute inset-0 w-1/2 ml-auto">
         <div className="flex items-center h-full">
           <div className="lg:max-w-xl mx-auto">

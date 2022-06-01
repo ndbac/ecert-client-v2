@@ -40,12 +40,12 @@ export const NavigationForGuest = () => {
           </div>
           <ul className="hidden lg:flex ml-12 mr-auto space-x-12">
             <li>
-              <Link href="/companies">
+              <Link href="/our-customers">
                 <a
                   className="text-sm text-blueGray-400 hover:text-blueGray-500"
                   href="#"
                 >
-                  Companies
+                  Our customers
                 </a>
               </Link>
             </li>
@@ -126,12 +126,14 @@ export const NavigationForGuest = () => {
             <div>
               <ul>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Company
-                  </a>
+                  <Link href="/our-customers">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Our customers
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-1">
                   <Link href="/about-us">
