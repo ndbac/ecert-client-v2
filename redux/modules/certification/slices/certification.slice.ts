@@ -69,10 +69,9 @@ export const getCertificationsByUserId = createAsyncThunk(
   async (inputId: string | string[] | undefined, { rejectWithValue }) => {
     try {
       console.log(`${baseUrl}/user/accuracy/user/${inputId}`);
-      const { data } = await axios.get<IUploadCertificationRes>(
+      const { data } = await axios.get<IUploadCertificationRes[]>(
         `${baseUrl}/user/accuracy/user/${inputId}`
       );
-      console.log(data);
       return data;
     } catch (error) {
       const err = error as AxiosError | Error;
