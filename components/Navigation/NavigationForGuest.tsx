@@ -40,20 +40,24 @@ export const NavigationForGuest = () => {
           </div>
           <ul className="hidden lg:flex ml-12 mr-auto space-x-12">
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                Company
-              </a>
+              <Link href="/companies">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Companies
+                </a>
+              </Link>
             </li>
             <li>
-              <a
-                className="text-sm text-blueGray-400 hover:text-blueGray-500"
-                href="#"
-              >
-                About Us
-              </a>
+              <Link href="/about-us">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  About Us
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/contact">

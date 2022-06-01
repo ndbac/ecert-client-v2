@@ -14,7 +14,7 @@ const formSchema = Yup.object({
   data: Yup.string().required("Please enter data"),
   subject: Yup.string().required("Please enter subject"),
   name: Yup.string().required("Please enter name"),
-  email: Yup.string().required("Please enter email"),
+  email: Yup.string().email('Email is not valid').required("Please enter email"),
   file: Yup.string().required("Please provide file"),
 });
 
@@ -50,13 +50,13 @@ export const UploadCerti = () => {
           <div className="max-w-md mb-8 mx-auto">
             <span className="text-sm text-blueGray-400">Contact Us</span>
             <h2 className="mt-2 text-4xl font-bold font-heading">
-              We will be glad to hear from you!
+              Realeasing your certification with eCert
             </h2>
           </div>
           <div>
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-4 text-sm">
-                <span className="mr-4 font-semibold">Departament:</span>
+                <span className="mr-4 font-semibold">Type of storing:</span>
                 <label className="mr-4">
                   <input
                     className="mr-1"
@@ -77,17 +77,19 @@ export const UploadCerti = () => {
                   <span>Blockchain</span>
                 </label>
               </div>
-              <div className="mb-4">
+              <div className="mb-4 text-left">
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.subject && formik.errors.subject}</p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
-                  placeholder="Subject"
+                  placeholder="Title"
                   value={formik.values.subject}
                   onChange={formik.handleChange("subject")}
                   onBlur={formik.handleBlur("subject")}
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-4 text-left">
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.name && formik.errors.name}</p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
@@ -97,7 +99,8 @@ export const UploadCerti = () => {
                   onBlur={formik.handleBlur("name")}
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-4 text-left">
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.email && formik.errors.email}</p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="email"
@@ -107,10 +110,11 @@ export const UploadCerti = () => {
                   onBlur={formik.handleBlur("email")}
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-4 text-left">
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.data && formik.errors.data}</p>
                 <textarea
                   className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
-                  placeholder="Message..."
+                  placeholder="Other informations..."
                   value={formik.values.data}
                   onChange={formik.handleChange("data")}
                   onBlur={formik.handleBlur("data")}
@@ -150,9 +154,10 @@ export const UploadCerti = () => {
                     type="checkbox"
                     name="terms"
                     value="1"
+                    checked
                   />
                   <span className="text-sm font-semibold">
-                    I agree to terms and conditions.
+                    By submit your certification. You agree to our terms and conditions.
                   </span>
                 </label>
                 <button

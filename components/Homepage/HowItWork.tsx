@@ -13,15 +13,17 @@ export const HowItWork = () => {
             <h2 className="text-3xl md:text-4xl font-bold font-heading">
               <span>Make your</span>
               <span className="text-blue-600"> life easier </span>
-              <span>for marketing sales and customer support</span>
+              <span>for verifying and storing certifications</span>
             </h2>
           </div>
           <div className="w-full lg:w-1/2 lg:pl-16">
             <p className="text-blueGray-400 leading-loose">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              luctus eget justo et iaculis. Quisque vitae nulla malesuada,
-              auctor arcu vitae, luctus nisi. Sed elementum vitae ligula id
-              imperdiet.
+              We are confident to be the pioneer in providing eCert, an
+              electronic certification encrypted by blockchain. To solve the
+              problems related to certifications issued by enterprises, eCert
+              provides a simple and convenient certification management tool,
+              saving time and money through charts, reports, and certification
+              search engines.
             </p>
           </div>
         </div>
@@ -31,11 +33,12 @@ export const HowItWork = () => {
               <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
                 1
               </div>
-              <Image className="h-48 mx-auto my-4" src={WorkTVPhoto} alt="" />
-              <h3 className="mb-2 font-bold font-heading">Donec fermentum</h3>
+              <div className="h-48 mx-auto my-4">
+                <Image src={WorkTVPhoto} alt="" />
+              </div>
+              <h3 className="mb-2 font-bold font-heading">Organization</h3>
               <p className="text-sm text-blueGray-400 leading-relaxed">
-                Sed ac magna sit amet risus tristique interdum at vel velit. In
-                hac habitasse platea dictumst.
+                Create authorized ceritifications for users.
               </p>
             </div>
           </div>
@@ -44,15 +47,15 @@ export const HowItWork = () => {
               <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
                 2
               </div>
-              <Image
-                className="h-48 mx-auto my-4"
-                src={PeopleWatchingPhoto}
-                alt=""
-              />
-              <h3 className="mb-2 font-bold font-heading">Donec fermentum</h3>
+              <div className="h-48 mx-auto my-4">
+                <Image
+                  src={PeopleWatchingPhoto}
+                  alt=""
+                />
+              </div>
+              <h3 className="mb-2 font-bold font-heading">Company</h3>
               <p className="text-sm text-blueGray-400 leading-relaxed">
-                Sed ac magna sit amet risus tristique interdum at vel velit. In
-                hac habitasse platea dictumst.
+                Verify whether provided certifications are valid.
               </p>
             </div>
           </div>
@@ -61,15 +64,13 @@ export const HowItWork = () => {
               <div className="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">
                 3
               </div>
-              <Image
-                className="h-48 mx-auto my-4"
-                src={FinancialReportPhoto}
-                alt=""
-              />
-              <h3 className="mb-2 font-bold font-heading">Donec fermentum</h3>
+              <div className="h-48 mx-auto my-4">
+                <Image src={FinancialReportPhoto} alt="" />
+              </div>
+
+              <h3 className="mb-2 font-bold font-heading">Individual user</h3>
               <p className="text-sm text-blueGray-400 leading-relaxed">
-                Sed ac magna sit amet risus tristique interdum at vel velit. In
-                hac habitasse platea dictumst.
+                Store and send copy of certifications to companies.
               </p>
             </div>
           </div>

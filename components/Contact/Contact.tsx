@@ -27,8 +27,7 @@ export const Contact = () => {
               </svg>
               <div className="leading-relaxed">
                 <span className="text-sm text-blueGray-400">Phone</span>
-                <p>+ 48 654-430-309</p>
-                <p>+ 1 6532-430-309</p>
+                <p>+ 84 886-449-565</p>
               </div>
             </div>
             <div className="w-1/2 lg:w-1/3 px-3 mb-12">
@@ -48,8 +47,7 @@ export const Contact = () => {
               </svg>
               <div className="leading-relaxed">
                 <span className="text-sm text-blueGray-400">E-mail</span>
-                <p>info@example.com</p>
-                <p>pat@example.com</p>
+                <p>helper@ecert.com</p>
               </div>
             </div>
             <div className="w-full lg:w-1/3 px-3 mb-12">
@@ -75,8 +73,8 @@ export const Contact = () => {
               </svg>
               <div className="leading-relaxed">
                 <span className="text-sm text-blueGray-400">Address</span>
-                <p>11567 E Broadview Dr</p>
-                <p>Colorado(CO), 80117</p>
+                <p>Room 205 - B1, School of ICT</p>
+                <p>Hanoi University of Science and Technology</p>
               </div>
             </div>
           </div>

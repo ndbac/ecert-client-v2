@@ -59,7 +59,7 @@ export const NavigationForUser = () => {
               </Link>
             </li>
             <li>
-              <Link href={`${userId}/dashboard`}>
+              <Link href={`/${userId}/dashboard`} replace>
                 <a
                   className="text-sm text-blueGray-400 hover:text-blueGray-500"
                   href="#"
@@ -135,7 +135,7 @@ export const NavigationForUser = () => {
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link href={`${userId}/dashboard`}>
+                  <Link href={`${userId}/dashboard`} replace>
                     <a
                       className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
                       href="#"

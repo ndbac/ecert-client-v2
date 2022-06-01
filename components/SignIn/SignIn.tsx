@@ -74,7 +74,7 @@ export const SignIn = () => {
             <form onSubmit={formik.handleSubmit}>
               <div className="w-full max-w-lg mx-auto lg:mx-0 my-auto">
                 <span className="text-sm text-blueGray-400">Sign In</span>
-                <h4 className="mb-6 text-3xl">Join our community</h4>
+                <h4 className="mb-6 text-3xl">Join our innovation</h4>
 
                 <div className="flex mb-4 px-4 bg-blueGray-50 rounded">
                   <input
