@@ -56,7 +56,7 @@ export const Certification = () => {
             />
           </div>
           <hr className="mt-10" />
-          <div className="pl-10 mb-20 grid grid-cols-2 mt-5 gap-5">
+          <div className="pl-10 mb-20 grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
             <p className="text-blueGray-700 text-sm flex">
               <p className="font-semibold">Created at: </p>
               <p className="pl-2">
