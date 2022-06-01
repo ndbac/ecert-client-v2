@@ -41,11 +41,13 @@ export const verifyToken = createAsyncThunk(
       },
     };
     try {
+      console.log(data.tokenId);
       const res = await axios.put(
         `${baseUrl}/verify/${data.tokenId}`,
         {},
         config
       );
+      console.log(res);
       return res.data.message;
     } catch (error) {
       const err = error as AxiosError | Error;

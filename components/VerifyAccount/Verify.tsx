@@ -24,6 +24,7 @@ function EmailVerify() {
   const account = useSelector<RootState>(
     (state) => state.accountReducer
   ) as IAccountState;
+  const { loading } = store;
   useEffect(() => {
     const userId = getItemFromLocalStorage("id");
     if (userId) {
@@ -77,7 +78,7 @@ function EmailVerify() {
       <div className="flex items-center justify-center p-5 min-w-screen md:mt-40">
         <div className="max-w-xl p-8 text-center text-gray-800 bg-white shadow-xl lg:max-w-3xl rounded-3xl lg:p-12">
           <h3 className="text-4xl pb-7 font-bold">
-            Thanks for signing up for Websitename!
+            Thanks for signing up for eCert!
           </h3>
           <div className="flex justify-center">
             <svg
@@ -103,7 +104,7 @@ function EmailVerify() {
               className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
               onClick={handleVerify}
             >
-              Click to Verify Email
+              {loading ? "Sending" : "Click to Verify Email"}
             </button>
           </div>
           {alert && !store.loading && message}
