@@ -7,6 +7,7 @@ import {
   IUserRegister,
 } from "../interfaces/auth.interface";
 import baseUrl from "../../../../utils/baseUrl";
+import { AuthState } from "../interfaces/auth.interface";
 
 const resetRegister = createAction("auth/register");
 
@@ -84,7 +85,7 @@ const authSlices = createSlice({
   name: "auth",
   initialState: {
     ...userLoginFromStorage,
-  },
+  } as AuthState,
   reducers: {},
   extraReducers: (builder) => {
     // Login user action

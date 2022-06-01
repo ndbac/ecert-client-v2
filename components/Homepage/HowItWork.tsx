@@ -48,10 +48,7 @@ export const HowItWork = () => {
                 2
               </div>
               <div className="h-48 mx-auto my-4">
-                <Image
-                  src={PeopleWatchingPhoto}
-                  alt=""
-                />
+                <Image src={PeopleWatchingPhoto} alt="" />
               </div>
               <h3 className="mb-2 font-bold font-heading">Company</h3>
               <p className="text-sm text-blueGray-400 leading-relaxed">

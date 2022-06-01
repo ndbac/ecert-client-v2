@@ -44,7 +44,9 @@ export const Certification = () => {
             <p className="text-blueGray-400 text-sm pb-8">
               Email: {uploadCert?.email}
             </p>
-            <p className="text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">{uploadCert?.data}</p>
+            <p className="text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
+              {uploadCert?.data}
+            </p>
           </div>
           <div className="relative max-w-6xl mx-auto text-center">
             <img
@@ -57,7 +59,9 @@ export const Certification = () => {
           <div className="pl-10 mb-20 grid grid-cols-2 mt-5 gap-5">
             <p className="text-blueGray-700 text-sm flex">
               <p className="font-semibold">Created at: </p>
-              <p className="pl-2">{new Date(Date.parse(uploadCert?.createdAt)).toDateString()}</p>
+              <p className="pl-2">
+                {new Date(Date.parse(uploadCert?.createdAt)).toDateString()}
+              </p>
             </p>
             <p className="text-blueGray-700 text-sm flex">
               <p className="font-semibold">Reference No: </p>
@@ -81,8 +85,7 @@ export const Certification = () => {
             <p className="text-red-600 text-sm">Invalid certification</p>
           </h2>
         </div>
-      )
-      }
-    </section >
+      )}
+    </section>
   );
 };

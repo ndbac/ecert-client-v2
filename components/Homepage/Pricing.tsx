@@ -15,7 +15,8 @@ export const Pricing = () => {
             <span>your best plan</span>
           </h2>
           <p className="max-w-sm mx-auto text-lg text-blueGray-400">
-            Best for all people who need 100% of security, protection, and save their time.
+            Best for all people who need 100% of security, protection, and save
+            their time.
           </p>
         </div>
         <div className="flex flex-wrap -mx-3">

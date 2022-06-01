@@ -14,10 +14,10 @@ export interface IUploadCertificationRes {
 
 export interface CertState {
   uploadCert: IUploadCertificationRes;
-  certs: IUploadCertificationRes[];
+  certs: IUploadCertificationRes;
   isCreated: boolean;
   loading: boolean;
-  serverErr: string;
+  serverErr: string | undefined;
 }
 
 export interface IUploadCertificationReq {

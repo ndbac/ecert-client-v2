@@ -14,7 +14,9 @@ const formSchema = Yup.object({
   data: Yup.string().required("Please enter data"),
   subject: Yup.string().required("Please enter subject"),
   name: Yup.string().required("Please enter name"),
-  email: Yup.string().email('Email is not valid').required("Please enter email"),
+  email: Yup.string()
+    .email("Email is not valid")
+    .required("Please enter email"),
   file: Yup.string().required("Please provide file"),
 });
 
@@ -78,7 +80,9 @@ export const UploadCerti = () => {
                 </label>
               </div>
               <div className="mb-4 text-left">
-                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.subject && formik.errors.subject}</p>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.subject && formik.errors.subject}
+                </p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
@@ -89,7 +93,9 @@ export const UploadCerti = () => {
                 />
               </div>
               <div className="mb-4 text-left">
-                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.name && formik.errors.name}</p>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.name && formik.errors.name}
+                </p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
@@ -100,7 +106,9 @@ export const UploadCerti = () => {
                 />
               </div>
               <div className="mb-4 text-left">
-                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.email && formik.errors.email}</p>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.email && formik.errors.email}
+                </p>
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="email"
@@ -111,7 +119,9 @@ export const UploadCerti = () => {
                 />
               </div>
               <div className="mb-4 text-left">
-                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">{formik.touched.data && formik.errors.data}</p>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.data && formik.errors.data}
+                </p>
                 <textarea
                   className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
                   placeholder="Other informations..."
@@ -157,7 +167,8 @@ export const UploadCerti = () => {
                     checked
                   />
                   <span className="text-sm font-semibold">
-                    By submit your certification. You agree to our terms and conditions.
+                    By submit your certification. You agree to our terms and
+                    conditions.
                   </span>
                 </label>
                 <button
