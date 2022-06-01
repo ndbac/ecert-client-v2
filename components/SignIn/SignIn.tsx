@@ -43,7 +43,7 @@ export const SignIn = () => {
 
   const router = useRouter();
   if (userAuth) {
-    router.push(`/user/${userAuth.id}`);
+    router.push(`/`);
   }
 
   return (
@@ -75,7 +75,9 @@ export const SignIn = () => {
               <div className="w-full max-w-lg mx-auto lg:mx-0 my-auto">
                 <span className="text-sm text-blueGray-400">Sign In</span>
                 <h4 className="mb-6 text-3xl">Join our innovation</h4>
-
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.email && formik.errors.email}
+                </p>
                 <div className="flex mb-4 px-4 bg-blueGray-50 rounded">
                   <input
                     value={formik.values.email}
@@ -100,6 +102,9 @@ export const SignIn = () => {
                     ></path>
                   </svg>
                 </div>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.password && formik.errors.password}
+                </p>
                 <div className="flex mb-6 px-4 bg-blueGray-50 rounded">
                   <input
                     value={formik.values.password}

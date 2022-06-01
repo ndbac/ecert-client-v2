@@ -77,6 +77,9 @@ export const SignUp = () => {
               <div className="w-full max-w-lg mx-auto lg:mx-0 my-auto">
                 <span className="text-sm text-blueGray-400">Sign Up</span>
                 <h4 className="mb-6 text-3xl">Create an account</h4>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.name && formik.errors.name}
+                </p>
                 <div className="flex mb-4 px-4 bg-blueGray-50 rounded">
                   <input
                     className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
@@ -87,6 +90,9 @@ export const SignUp = () => {
                     onBlur={formik.handleBlur("name")}
                   />
                 </div>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.email && formik.errors.email}
+                </p>
                 <div className="flex mb-4 px-4 bg-blueGray-50 rounded">
                   <input
                     className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
@@ -111,6 +117,9 @@ export const SignUp = () => {
                     ></path>
                   </svg>
                 </div>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.password && formik.errors.password}
+                </p>
                 <div className="flex mb-6 px-4 bg-blueGray-50 rounded">
                   <input
                     className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"
@@ -143,6 +152,10 @@ export const SignUp = () => {
                     </svg>
                   </button>
                 </div>
+                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
+                  {formik.touched.confirmPassword &&
+                    formik.errors.confirmPassword}
+                </p>
                 <div className="flex mb-6 px-4 bg-blueGray-50 rounded">
                   <input
                     className="w-full py-4 text-xs placeholder-blueGray-400 font-semibold leading-none bg-blueGray-50 outline-none"

@@ -69,6 +69,16 @@ export const NavigationForUser = () => {
               </Link>
             </li>
             <li>
+              <Link href="/about-us">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  About Us
+                </a>
+              </Link>
+            </li>
+            <li>
               <Link href="/contact">
                 <a
                   className="text-sm text-blueGray-400 hover:text-blueGray-500"
@@ -145,7 +155,16 @@ export const NavigationForUser = () => {
                   </Link>
                 </li>
                 <li className="mb-1">
-                  \
+                  <Link href="/about-us">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      About Us
+                    </a>
+                  </Link>
+                </li>
+                <li className="mb-1">
                   <Link href="/contact">
                     <a
                       className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"

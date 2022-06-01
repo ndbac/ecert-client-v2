@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Navigation } from "../../components/Navigation/Navigation";
-import { Footer } from "../../components/Footer/Footer";
-import { Dashboard } from "../../components/Dashboard/Dashboard";
+import { AboutUs } from "../components/AboutUs/AboutUs";
+import { Navigation } from "../components/Navigation/Navigation";
+import { Footer } from "../components/Footer/Footer";
 
-const ContactPage: NextPage = () => {
+const AboutUsPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -15,10 +15,10 @@ const ContactPage: NextPage = () => {
       </Head>
 
       <Navigation />
-      <Dashboard />
+      <AboutUs />
       <Footer />
     </div>
   );
 };
 
-export default ContactPage;
+export default AboutUsPage;

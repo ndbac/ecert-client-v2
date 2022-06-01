@@ -134,20 +134,24 @@ export const NavigationForGuest = () => {
                   </a>
                 </li>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    About Us
-                  </a>
+                  <Link href="/about-us">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      About Us
+                    </a>
+                  </Link>
                 </li>
                 <li className="mb-1">
-                  <a
-                    className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
-                    href="#"
-                  >
-                    Features
-                  </a>
+                  <Link href="/contact">
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Contact
+                    </a>
+                  </Link>
                 </li>
               </ul>
               <div className="mt-4 pt-6 border-t border-blueGray-100">

@@ -11,7 +11,7 @@ const ContactPage: NextPage = () => {
       <Head>
         <title>eCert - Electronic Certification</title>
         <meta name="description" content="Electronic Certification" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon2.ico" />
       </Head>
 
       <Navigation />
