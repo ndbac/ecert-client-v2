@@ -45,7 +45,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>3 Emails</span>
+                    <span>3 Profiles</span>
                   </li>
                   <li className="flex mb-3">
                     <svg
@@ -79,7 +79,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>Unlimited Domains</span>
+                    <span>Unlimited Access</span>
                   </li>
                   <li className="flex">
                     <svg
@@ -145,7 +145,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>6 Emails</span>
+                    <span>6 Profiles</span>
                   </li>
                   <li className="flex items-center mb-3">
                     <svg
@@ -179,7 +179,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>Unlimited Domains</span>
+                    <span>Unlimited Access</span>
                   </li>
                   <li className="flex items-center">
                     <svg
@@ -247,7 +247,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>12 Emails</span>
+                    <span>12 Profiles</span>
                   </li>
                   <li className="flex mb-3">
                     <svg
@@ -281,7 +281,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>Unlimited Domains</span>
+                    <span>Unlimited Access</span>
                   </li>
                   <li className="flex">
                     <svg
