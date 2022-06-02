@@ -44,10 +44,6 @@ export const Certification = () => {
             <p className="text-blueGray-400 text-sm pb-8">
               Email: {uploadCert?.email}
             </p>
-            <p className="text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
-              <h1 className="-ml-4 font-semibold mb-2">Description:</h1>
-              {uploadCert?.data}
-            </p>
             <hr className="mt-10" />
             <div className="pl-10 mb-5 grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
               <p className="text-blueGray-700 text-sm flex">
@@ -70,13 +66,17 @@ export const Certification = () => {
               </p>
             </div>
             <hr className="mb-10" />
-          </div>
-          <div className="relative max-w-6xl mx-auto text-center">
-            <img
-              className="object-cover w-full h-full"
-              src={uploadCert?.qrCode}
-              alt=""
-            />
+            <div className="relative max-w-6xl mb-5 mx-auto text-center">
+              <img
+                className="object-cover w-full h-full"
+                src={uploadCert?.qrCode}
+                alt=""
+              />
+            </div>
+            <p className="text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
+              <h1 className="-ml-4 font-semibold mb-2">Description:</h1>
+              {uploadCert?.data}
+            </p>
           </div>
         </div>
       ) : (
