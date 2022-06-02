@@ -111,7 +111,7 @@ const authSlices = createSlice({
       state.loading = true;
     });
     builder.addCase(registerUserAction.fulfilled, (state) => {
-      state.registered = false;
+      state.registered = true;
       state.loading = false;
       state.serverErr = undefined;
     });
