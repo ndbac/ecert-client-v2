@@ -30,7 +30,6 @@ function ResetPassword() {
     },
     onSubmit: (data) => {
       dispatch(createResetPasswordToken(data));
-      formik.resetForm();
     },
     validationSchema: formSchema,
   });
