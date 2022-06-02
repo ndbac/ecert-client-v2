@@ -163,6 +163,13 @@ export const SignIn = () => {
                   <span>Sign In with Google</span>
                 </button>
               </div>
+              <div className="mt-4 text-center ">
+                <Link href="/reset-password">
+                  <a className="text-blueGray text-sm hover:underline">
+                    Forgot Password?
+                  </a>
+                </Link>
+              </div>
               <div>
                 <p className="mt-8 text-xs text-blueGray-400 text-center lg:text-left">
                   <a className="underline hover:text-blueGray-500" href="#">
