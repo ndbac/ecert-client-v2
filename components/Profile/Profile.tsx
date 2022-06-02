@@ -72,7 +72,7 @@ export const Profile = () => {
         </div>
       ) : (
         <section className="relative">
-          <div className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-blueGray-50 z-0 -z-10"></div>
+          <div className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-blueGray-50 z-0"></div>
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-3">
               <div className="w-full lg:w-1/2 px-3">

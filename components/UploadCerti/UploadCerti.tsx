@@ -54,6 +54,7 @@ export const UploadCerti = () => {
             <h2 className="mt-2 text-4xl font-bold font-heading">
               Realeasing your certification with eCert
             </h2>
+            <p>Only can upload certificates when your account is verified</p>
           </div>
           <div>
             <form onSubmit={formik.handleSubmit}>

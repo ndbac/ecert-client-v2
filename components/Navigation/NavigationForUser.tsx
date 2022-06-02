@@ -88,6 +88,16 @@ export const NavigationForUser = () => {
                 </a>
               </Link>
             </li>
+            <li>
+              <Link href={`/${userId}/profile`}>
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Profile
+                </a>
+              </Link>
+            </li>
           </ul>
           <div className="hidden lg:block">
             <button
@@ -171,6 +181,16 @@ export const NavigationForUser = () => {
                       href="#"
                     >
                       Contact
+                    </a>
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link href={`/${userId}/profile`}>
+                    <a
+                      className="block p-4 text-sm text-blueGray-500 hover:bg-blue-50 hover:text-blue-600"
+                      href="#"
+                    >
+                      Profile
                     </a>
                   </Link>
                 </li>
