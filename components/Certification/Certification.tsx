@@ -8,6 +8,7 @@ import {
 } from "../../redux/modules/common/common.interface";
 import { getCertification } from "../../redux/modules/certification/slices/certification.slice";
 import { CertState } from "../../redux/modules/certification/interfaces/certification.interface";
+import reactHtmlParser from "react-html-parser";
 
 export const Certification = () => {
   const router = useRouter();
@@ -44,6 +45,13 @@ export const Certification = () => {
             <p className="text-blueGray-400 text-sm pb-8">
               Email: {uploadCert?.email}
             </p>
+            <div className="relative max-w-6xl mb-5 mx-auto text-center">
+              <img
+                className="object-cover w-full h-full"
+                src={uploadCert?.qrCode}
+                alt=""
+              />
+            </div>
             <hr className="mt-10" />
             <div className="pl-10 mb-5 grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
               <p className="text-blueGray-700 text-sm flex">
@@ -58,7 +66,9 @@ export const Certification = () => {
               </p>
               <p className="text-blueGray-700 text-sm flex">
                 <p className="font-semibold">Updated at: </p>
-                <p className="pl-2">{uploadCert?.updatedAt}</p>
+                <p className="pl-2">
+                  {new Date(Date.parse(uploadCert?.updatedAt)).toString()}
+                </p>
               </p>
               <p className="text-blueGray-700 text-sm flex">
                 <p className="font-semibold">Organization id: </p>
@@ -66,16 +76,9 @@ export const Certification = () => {
               </p>
             </div>
             <hr className="mb-10" />
-            <div className="relative max-w-6xl mb-5 mx-auto text-center">
-              <img
-                className="object-cover w-full h-full"
-                src={uploadCert?.qrCode}
-                alt=""
-              />
-            </div>
-            <p className="text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
-              <h1 className="-ml-4 font-semibold mb-2">Description:</h1>
-              {uploadCert?.data}
+            <p className="ml-4 mb-5 text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
+              {/* <h1 className="-ml-4 font-semibold mb-2">Description:</h1> */}
+              {reactHtmlParser(uploadCert?.data)}
             </p>
           </div>
         </div>

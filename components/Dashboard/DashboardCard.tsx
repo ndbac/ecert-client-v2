@@ -6,14 +6,12 @@ export const DashboardCard = (data: any) => {
   return (
     <tr className="border-t border-blueGray-100">
       <td>
-        <Link href={`/certification/${data.data.signature}`} replace>
+        <Link href={`/certification/${data.data.signature}`}>
           <div className="flex px-6 py-4 text-xs cursor-pointer">
             <img className="w-8 rounded" alt="" src={data.data.qrCode}></img>
             <div className="pl-4">
               <p className="font-semibold">{data.data.name}</p>
-              <p className="text-blueGray-400">
-                {data.data.data.slice(0, 20)}...
-              </p>
+              <p className="text-blueGray-400">{data.data.email}</p>
             </div>
           </div>
         </Link>

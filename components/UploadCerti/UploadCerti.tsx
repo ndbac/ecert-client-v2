@@ -9,9 +9,16 @@ import {
 import { uploadCertAction } from "../../redux/modules/certification/slices/certification.slice";
 import { CertState } from "../../redux/modules/certification/interfaces/certification.interface";
 import Dropzone from "react-dropzone";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import "suneditor/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
+
+const SunEditor = dynamic(() => import("suneditor-react"), {
+  ssr: false,
+});
 
 const formSchema = Yup.object({
-  data: Yup.string().required("Please enter data"),
+  // data: Yup.string().required("Please enter data"),
   subject: Yup.string().required("Please enter subject"),
   name: Yup.string().required("Please enter name"),
   email: Yup.string()
@@ -21,6 +28,7 @@ const formSchema = Yup.object({
 });
 
 export const UploadCerti = () => {
+  const [data, setData] = useState("");
   const dispatch = useDispatch<AppDispatch>();
   const formik = useFormik({
     initialValues: {
@@ -31,6 +39,7 @@ export const UploadCerti = () => {
       file: "",
     },
     onSubmit: (values) => {
+      values.data = data;
       dispatch(uploadCertAction(values));
     },
     validationSchema: formSchema,
@@ -119,19 +128,14 @@ export const UploadCerti = () => {
                   onBlur={formik.handleBlur("email")}
                 />
               </div>
-              <div className="mb-4 text-left">
-                <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
-                  {formik.touched.data && formik.errors.data}
-                </p>
-                <textarea
-                  className="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
-                  placeholder="Other informations..."
-                  value={formik.values.data}
-                  onChange={formik.handleChange("data")}
-                  onBlur={formik.handleBlur("data")}
-                ></textarea>
-              </div>
-              <div className="mb-4">
+              <SunEditor
+                setDefaultStyle="font-family: sans-serif; font-size: 15px; text-align: left;"
+                setOptions={{
+                  height: "200",
+                }}
+                onChange={(e) => setData(e)}
+              />
+              <div className="mb-4 mt-5">
                 <label className="flex px-2 bg-blueGray-50 rounded">
                   <div className="py-6">
                     <Dropzone
