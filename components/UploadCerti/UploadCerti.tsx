@@ -90,6 +90,9 @@ export const UploadCerti = () => {
                   <span>Blockchain</span>
                 </label>
               </div>
+              <p className="text-left font-semibold test-sx px-2 pt-2">
+                Title:
+              </p>
               <div className="mb-4 text-left">
                 <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
                   {formik.touched.subject && formik.errors.subject}
@@ -97,12 +100,13 @@ export const UploadCerti = () => {
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
-                  placeholder="Title"
+                  placeholder="Enter title of certification"
                   value={formik.values.subject}
                   onChange={formik.handleChange("subject")}
                   onBlur={formik.handleBlur("subject")}
                 />
               </div>
+              <p className="text-left font-semibold test-sm px-2 pt-2">Name:</p>
               <div className="mb-4 text-left">
                 <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
                   {formik.touched.name && formik.errors.name}
@@ -110,12 +114,15 @@ export const UploadCerti = () => {
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                   type="text"
-                  placeholder="Name"
+                  placeholder="Enter name of receiver"
                   value={formik.values.name}
                   onChange={formik.handleChange("name")}
                   onBlur={formik.handleBlur("name")}
                 />
               </div>
+              <p className="text-left font-semibold test-sm px-2 pt-2">
+                Email:
+              </p>
               <div className="mb-4 text-left">
                 <p className="mb-2 font-semibold text-red-500 text-sm ml-4">
                   {formik.touched.email && formik.errors.email}
@@ -129,6 +136,9 @@ export const UploadCerti = () => {
                   onBlur={formik.handleBlur("email")}
                 />
               </div>
+              <p className="text-left font-semibold test-sm px-2 py-2">
+                Description:
+              </p>
               <SunEditor
                 setDefaultStyle="font-family: sans-serif; font-size: 15px; text-align: left;"
                 setOptions={{
@@ -137,7 +147,7 @@ export const UploadCerti = () => {
                 onChange={(e) => setData(e)}
               />
               <div className="mb-4 mt-5">
-                <label className="flex px-2 bg-blueGray-50 rounded">
+                <div className="flex px-2 bg-blueGray-50 rounded">
                   <div className="py-6">
                     <Dropzone
                       onDrop={(acceptedFiles) => {
@@ -161,7 +171,7 @@ export const UploadCerti = () => {
                       )}
                     </Dropzone>
                   </div>
-                </label>
+                </div>
               </div>
               <div className="flex justify-between items-center">
                 <label>

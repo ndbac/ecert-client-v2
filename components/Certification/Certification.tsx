@@ -76,8 +76,8 @@ export const Certification = () => {
               </p>
             </div>
             <hr className="mb-10" />
-            <p className="ml-4 mb-5 text-blueGray-700 text-left pb-5 max-w-5xl mx-auto">
-              {/* <h1 className="-ml-4 font-semibold mb-2">Description:</h1> */}
+            <p className="mb-5 text-blueGray-700 text-left pb-5 max-w-4xl mx-auto">
+              <h1 className="-ml-6 font-semibold mb-2">Description:</h1>
               {reactHtmlParser(uploadCert?.data)}
             </p>
           </div>
