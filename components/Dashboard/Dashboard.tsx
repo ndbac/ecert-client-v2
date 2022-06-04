@@ -8,6 +8,7 @@ import {
 import { getCertificationsByUserId } from "../../redux/modules/certification/slices/certification.slice";
 import { CertState } from "../../redux/modules/certification/interfaces/certification.interface";
 import { DashboardCard } from "./DashboardCard";
+import { getItemFromLocalStorage } from "../../utils/helpers";
 
 export const Dashboard = () => {
   const router = useRouter();
@@ -20,6 +21,13 @@ export const Dashboard = () => {
   ) as CertState;
   const { certs, loading, serverErr } = storeData;
 
+  const localUserId = getItemFromLocalStorage("id");
+  if (
+    (!localUserId || localUserId !== router.query.userId) &&
+    typeof window !== "undefined"
+  ) {
+    router.push(`/`);
+  }
   return (
     <section className="py-20 bg-blueGray-50">
       <div className="container px-4 mx-auto">

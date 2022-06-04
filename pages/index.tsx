@@ -6,6 +6,7 @@ import { Header } from "../components/Homepage/Header";
 import { HowItWork } from "../components/Homepage/HowItWork";
 import { Pricing } from "../components/Homepage/Pricing";
 import { Footer } from "../components/Footer/Footer";
+import { Facebook } from "../components/Facebook/Facebook";
 
 const Home: NextPage = () => {
   return (
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
       <Header />
       <HowItWork />
       <Pricing />
+      <Facebook />
       <Footer />
     </div>
   );

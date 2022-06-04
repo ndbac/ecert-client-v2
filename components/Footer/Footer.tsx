@@ -49,7 +49,12 @@ export const Footer = () => {
             © 2022. All rights reserved.
           </p>
           <div className="order-first lg:order-last -mx-2 mb-4 lg:mb-0">
-            <a className="inline-block px-2" href="#">
+            <a
+              className="inline-block px-2"
+              href="https://www.facebook.com/eCert.2022/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image src={FacebookLogo} alt="" />
             </a>
             <a className="inline-block px-2" href="#">

@@ -12,6 +12,7 @@ import Dropzone from "react-dropzone";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import "suneditor/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
+import { getItemFromLocalStorage } from "../../utils/helpers";
 
 const SunEditor = dynamic(() => import("suneditor-react"), {
   ssr: false,
@@ -50,10 +51,10 @@ export const UploadCerti = () => {
   ) as CertState;
   const { isCreated, loading, serverErr } = storeData;
   const router = useRouter();
-  if (isCreated) {
+  const userToken = getItemFromLocalStorage("token");
+  if (isCreated || (!userToken && typeof window !== "undefined")) {
     router.push(`/`);
   }
-
   return (
     <section className="py-20">
       <div className="container px-4 mx-auto">
