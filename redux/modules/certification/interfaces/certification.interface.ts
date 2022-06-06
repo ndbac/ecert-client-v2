@@ -17,6 +17,7 @@ export interface CertState {
   certs: IUploadCertificationRes[];
   isCreated: boolean;
   loading: boolean;
+  certSent: any;
   serverErr: string | undefined;
 }
 
