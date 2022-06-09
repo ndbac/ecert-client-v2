@@ -1,4 +1,64 @@
+import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  AppDispatch,
+  RootState,
+} from "../../redux/modules/common/common.interface";
+import * as Yup from "yup";
+import {
+  DEFAULT_EMAIL_ADDRESS,
+  DEFAULT_EMAIL_CONTACT,
+} from "../../utils/defaultValues";
+import {
+  NotificationState,
+  EEmailOption,
+  EEmailType,
+} from "../../redux/modules/notification/interfaces/notification.interface";
+import { userSendEmail } from "../../redux/modules/notification/slices/notification.slice";
+
+const formSchema = Yup.object({
+  firstName: Yup.string()
+    .max(20, "Your first name must be lower than 30 characters")
+    .required("Please enter your first name"),
+  lastName: Yup.string()
+    .max(20, "Your last name must be lower than 30 characters")
+    .required("Please enter your last name"),
+  from: Yup.string()
+    .email("Your email is not valid")
+    .required("Please enter your email address"),
+  text: Yup.string().required("Please enter your message"),
+});
+
 export const Contact = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const store = useSelector<RootState>(
+    (state) => state.notiReducer
+  ) as NotificationState;
+  const { loading, serverErr } = store;
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      from: "",
+      text: "",
+    },
+    onSubmit: (values) => {
+      const message = `Name: ${values.firstName} ${values.lastName}\nEmail: ${values.from}\nInfo: ${values.text}`;
+      const data = {
+        from: values.from,
+        to: DEFAULT_EMAIL_ADDRESS,
+        subject: DEFAULT_EMAIL_CONTACT,
+        text: message,
+        option: EEmailOption.TEXT,
+        type: EEmailType.NOTIFICATION,
+      };
+      dispatch(userSendEmail(data));
+      formik.resetForm();
+    },
+    validationSchema: formSchema,
+  });
+
   return (
     <section className="py-20">
       <div className="container px-4 mx-auto">
@@ -79,93 +139,101 @@ export const Contact = () => {
             </div>
           </div>
           <div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className="mb-4 text-sm">
-                <span className="mr-4 font-semibold">Departament:</span>
-                <label className="mr-4">
-                  <input
-                    className="mr-1"
-                    type="radio"
-                    name="department"
-                    value="1"
-                  />
-                  <span>Support</span>
-                </label>
-                <label>
-                  <input
-                    className="mr-1"
-                    type="radio"
-                    name="department"
-                    value="2"
-                  />
-                  <span>Sales</span>
-                </label>
+                <span className="mr-4 font-semibold">Contact Form:</span>
+                {serverErr && (
+                  <div className="text-red-500 font-semibold text-xl text-center pb-2">
+                    Something wrong happened. Please try again!
+                  </div>
+                )}
               </div>
               <div className="flex flex-wrap mb-4 -mx-3">
-                <div className="w-full lg:w-1/2 px-3 mb-4 lg:mb-0">
+                <div className="w-full h-full lg:w-1/2 px-3 mb-4 lg:mb-0">
                   <div className="mb-4">
                     <input
                       className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                       type="text"
-                      placeholder="Subject"
+                      placeholder="First Name"
+                      id="firstName"
+                      name="firstName"
+                      onChange={formik.handleChange("firstName")}
+                      value={formik.values.firstName}
+                      onBlur={formik.handleBlur("firstName")}
                     />
+                    <p className="mb-2 ml-6 text-red-500 font-semibold">
+                      {" "}
+                      {formik.touched.firstName && formik.errors.firstName}{" "}
+                    </p>
                   </div>
                   <div className="mb-4">
                     <input
                       className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                       type="text"
-                      placeholder="Name"
+                      placeholder="Last Name"
+                      id="lastName"
+                      name="lastName"
+                      onChange={formik.handleChange("lastName")}
+                      value={formik.values.lastName}
+                      onBlur={formik.handleBlur("lastName")}
                     />
+                    <p className="mb-2 ml-6 text-red-500 font-semibold">
+                      {" "}
+                      {formik.touched.lastName && formik.errors.lastName}{" "}
+                    </p>
                   </div>
-                  <div className="mb-4">
+                  <div className="mt-auto">
                     <input
                       className="w-full p-4 text-xs font-semibold leading-none bg-blueGray-50 rounded outline-none"
                       type="email"
                       placeholder="name@example.com"
+                      id="from"
+                      name="from"
+                      onChange={formik.handleChange("from")}
+                      value={formik.values.from}
+                      onBlur={formik.handleBlur("from")}
                     />
-                  </div>
-                  <div>
-                    <label className="flex px-2 bg-blueGray-50 rounded">
-                      <input
-                        className="hidden"
-                        type="file"
-                        placeholder="Choose file.."
-                        name="Choose file"
-                      />
-                      <div className="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-blueGray-500 hover:bg-blueGray-600 rounded cursor-pointer">
-                        Browse
-                      </div>
-                    </label>
+                    <p className="mb-2 ml-6 text-red-500 font-semibold">
+                      {" "}
+                      {formik.touched.from && formik.errors.from}
+                    </p>
                   </div>
                 </div>
                 <div className="w-full lg:w-1/2 px-3">
                   <textarea
                     className="w-full h-full p-4 text-xs font-semibold leading-none resize-none bg-blueGray-50 rounded outline-none"
                     placeholder="Message..."
+                    id="text"
+                    name="text"
+                    onChange={formik.handleChange("text")}
+                    value={formik.values.text}
+                    onBlur={formik.handleBlur("text")}
                   ></textarea>
+                  <p className="mb-2 ml-6 text-red-500 font-semibold">
+                    {" "}
+                    {formik.touched.text && formik.errors.text}{" "}
+                  </p>
                 </div>
               </div>
               <div className="flex justify-between items-center">
-                <label>
-                  <input
-                    className="mr-1"
-                    type="checkbox"
-                    name="terms"
-                    value="1"
-                  />
-                  <span className="text-sm font-semibold">
-                    I agree to terms and conditions.
-                  </span>
-                </label>
                 <button
                   className="py-4 px-8 text-sm text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
                   type="submit"
                 >
-                  Submit
+                  <span className="mr-2">
+                    {loading ? "Sending" : "Send message"}
+                  </span>
                 </button>
               </div>
             </form>
           </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14896.937378123648!2d105.8302404!3d21.0233073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7bcf10bcfb%3A0x1e1c60e2910f9d1e!2seCert%20-%20Electronic%20Certification!5e0!3m2!1svi!2s!4v1654752525271!5m2!1svi!2s"
+            width="600"
+            height="450"
+            className="w-full pt-8"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </section>
