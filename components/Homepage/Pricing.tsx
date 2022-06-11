@@ -23,7 +23,7 @@ export const Pricing = () => {
           <div className="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
             <div className="pt-16 pb-8 px-4 text-center bg-white rounded shadow">
               <Image className="h-20 mb-6 mx-auto" src={PeoplePhoto} alt="" />
-              <h3 className="mb-2 text-4xl font-bold font-heading">Begginer</h3>
+              <h3 className="mb-2 text-4xl font-bold font-heading">Beginner</h3>
               <span className="text-4xl text-blue-600 font-bold font-heading">
                 $32.99
               </span>
@@ -62,7 +62,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>1 Datebases</span>
+                    <span>1 Databases </span>
                   </li>
                   <li className="flex mb-3">
                     <svg
@@ -162,7 +162,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>4 Datebases</span>
+                    <span>4 Databases</span>
                   </li>
                   <li className="flex items-center mb-3">
                     <svg
@@ -264,7 +264,7 @@ export const Pricing = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       ></path>
                     </svg>
-                    <span>8 Datebases</span>
+                    <span>8 Databases</span>
                   </li>
                   <li className="flex mb-3">
                     <svg

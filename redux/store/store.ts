@@ -5,6 +5,7 @@ import certiReducer from "../modules/certification/slices/certification.slice";
 import verifyReducer from "../modules/verify/slices/verify.slice";
 import accountReducer from "../modules/account/slices/account.slice";
 import emailReducer from "../modules/email/slices/email.slice";
+import notiReducer from "../modules/notification/slices/notification.slice";
 import categoryReducer from "../modules/category/slices/category.slice";
 import postReducer from "../modules/post/slices/post.slice";
 
@@ -15,6 +16,7 @@ const store = configureStore({
     verifyReducer,
     accountReducer,
     emailReducer,
+    notiReducer,
     categoryReducer,
     postReducer,
   },
