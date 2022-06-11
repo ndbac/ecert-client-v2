@@ -6,6 +6,7 @@ export interface IAccount {
   verify: boolean;
   photoUrl: string;
   namespace: string;
+  createdAt: string;
 }
 export interface IAccountState {
   user: IAccount;

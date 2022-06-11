@@ -40,6 +40,16 @@ export const NavigationForGuest = () => {
           </div>
           <ul className="hidden lg:flex ml-12 mr-auto space-x-12">
             <li>
+              <Link href="/discovery">
+                <a
+                  className="text-sm text-blueGray-400 hover:text-blueGray-500"
+                  href="#"
+                >
+                  Discovery
+                </a>
+              </Link>
+            </li>
+            <li>
               <Link href="/our-customers">
                 <a
                   className="text-sm text-blueGray-400 hover:text-blueGray-500"
